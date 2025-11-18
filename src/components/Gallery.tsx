@@ -1,6 +1,7 @@
 import { type GymContent } from "@/data/gym/content";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 interface GalleryProps {
   data: GymContent;
@@ -14,6 +15,22 @@ const defaultSamples = [
 ];
 const changeSet = [1, 2, 3, 4, 5, 6].map(n => `/assets/change/${n}.jpg`);
 const fallback = "/assets/default/trainer.jpg";
+
+const FallbackImage = ({ sources, alt }: { sources: string[]; alt: string }) => {
+  const [idx, setIdx] = useState(0);
+  const fallback = "/assets/default/trainer.jpg";
+  return (
+    <Image
+      src={sources[idx] || fallback} // fixed: always a string
+      alt={alt}
+      fill
+      onError={() => setIdx(i => Math.min(i + 1, sources.length - 1))}
+      sizes="(max-width:768px) 100vw, 33vw"
+      className="object-cover group-hover:scale-105 transition-transform duration-500"
+      decoding="async"
+    />
+  );
+};
 
 export const Gallery = ({ data }: GalleryProps) => {
   const content = (data.gallery || []).filter(Boolean);
@@ -35,14 +52,16 @@ export const Gallery = ({ data }: GalleryProps) => {
       </motion.h3>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center">
         {slots.map(i => {
-          const candidates = [
+          const candidatesRaw = [
             content[i],
             changeSet[i],
             defaultSamples[i % defaultSamples.length],
             fallback,
-          ].filter((v): v is string => typeof v === "string" && v.length > 0);
-
-          const src = candidates[0];
+          ];
+          const candidates = candidatesRaw.filter(
+            (v): v is string => typeof v === "string" && v.length > 0
+          ); // removes undefined
+          const srcList = candidates.length ? candidates : [fallback];
           return (
             <motion.figure
               key={`g-${i}`}
@@ -52,14 +71,7 @@ export const Gallery = ({ data }: GalleryProps) => {
               transition={{ delay: i * 0.05 }}
               className="relative h-48 md:h-56 w-full max-w-sm rounded-lg overflow-hidden group"
             >
-              <Image
-                src={src}
-                alt={`gallery-${i}`}
-                fill
-                sizes="(max-width:768px) 100vw, 33vw"
-                decoding="async"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+              <FallbackImage sources={srcList} alt={`gallery-${i}`} />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors" />
             </motion.figure>
           );
