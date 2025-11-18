@@ -61,19 +61,10 @@ export const Hero = () => {
           variants={textVariants}
           className="flex flex-col md:flex-row gap-4 z-10"
         >
-          <Link href={"#portfolio"}>
-            <motion.button
-              type="button"
-              variants={textVariants}
-              className="p-2 md:p-4 border border-white rounded-lg bg-transparent text-white font-light text-base cursor-pointer"
-            >
-              See the Latest Works
-            </motion.button>
-          </Link>
           <Link href={"#contact"}>
             <motion.button
               variants={textVariants}
-              className="p-2 md:p-4 border border-white rounded-lg bg-white text-black font-light text-base"
+              className="p-2 md:p-4 border border-white rounded-lg bg-transparent text-white font-light text-base cursor-pointer"
             >
               Contact Me
             </motion.button>
@@ -97,15 +88,6 @@ export const Hero = () => {
       >
         Programmer, Developer, Problem Solver
       </motion.div>
-      {/* <figure className="h-1/2 md:h-full w-full md:w-auto absolute top-auto md:top-0 bottom-0 md:bottom-auto right-0">
-        <Image
-          src="/assets/hero.png"
-          alt="ikramdeveloper"
-          width={100}
-          height={100}
-          className="w-full h-full object-cover"
-        />
-      </figure> */}
     </div>
   );
 };

@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 html {
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top left, #0d0d0f, #000);
+  color: #f3f4f6; /* slightly brighter than pure white for readability on dark bg */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: system-ui, sans-serif;
+}
+
+section {
+  @apply py-16;
 }

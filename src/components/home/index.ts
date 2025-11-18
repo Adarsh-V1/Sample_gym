@@ -1,5 +1,7 @@
-export { Hero } from "./Hero";
-export { Parallax } from "./Parallax";
-export { Services } from "./Services";
-export { Portfolio } from "./portfolio/Portfolio";
-export { Contact } from "./Contact";
+import { Hero } from "./Hero";
+import { Parallax } from "./Parallax";
+import { Services } from "./Services";
+import { Portfolio } from "./portfolio/Portfolio";
+import { Contact } from "./Contact";
+
+export {};

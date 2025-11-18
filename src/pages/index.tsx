@@ -1,47 +1,40 @@
-import { Cursor } from "@/components/_shared";
-import { Navbar } from "@/components/layout";
-import {
-  Hero,
-  Parallax,
-  Services,
-  Portfolio,
-  Contact,
-} from "@/components/home";
+import { gymContent } from "@/data/gym/content";
+import { Navbar } from "@/components/layout/Navbar";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Facilities } from "@/components/Facilities";
+import { Trainers } from "@/components/Trainers";
+import { Pricing } from "@/components/Pricing";
+import { Gallery } from "@/components/Gallery";
+import { Reviews } from "@/components/Reviews";
+import { Contact } from "@/components/Contact";
+import Head from "next/head";
 
-const HomePage = () => {
+const GymHome = () => {
   return (
-    <main className="text-gray-600">
-      <Cursor />
-      <section
-        id="home"
-        className="w-full h-screen overflow-hidden snap-center bg-hero-gradient"
-      >
-        <Navbar />
-        <Hero />
-      </section>
-      <section className="w-full h-screen overflow-hidden snap-center">
-        <Parallax type="services" />
-      </section>
-      <section
-        id="services"
-        className="w-full h-screen overflow-hidden snap-center bg-hero-gradient"
-      >
-        <Services />
-      </section>
-      <section className="w-full h-screen overflow-hidden snap-center">
-        <Parallax type="portfolio" />
-      </section>
-      <section id="portfolio" className="bg-hero-gradient">
-        <Portfolio />
-      </section>
-      <section
-        id="contact"
-        className="w-full h-screen overflow-hidden snap-center bg-hero-gradient"
-      >
-        <Contact />
-      </section>
-    </main>
+    <>
+      <Head>
+        <title>{gymContent.name} – {gymContent.tagline}</title>
+        <meta name="description" content={gymContent.about} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content={`${gymContent.name} – ${gymContent.tagline}`} />
+        <meta property="og:description" content={gymContent.about} />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="/" />
+      </Head>
+      <main className="text-gray-100">
+        <Navbar name={gymContent.name} />
+        <Hero data={gymContent} />
+        <About data={gymContent} />
+        <Facilities data={gymContent} />
+        <Trainers data={gymContent} />
+        <Pricing data={gymContent} />
+        <Gallery data={gymContent} />
+        <Reviews data={gymContent} />
+        <Contact data={gymContent} />
+      </main>
+    </>
   );
 };
 
-export default HomePage;
+export default GymHome;
