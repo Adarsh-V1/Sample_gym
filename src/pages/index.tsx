@@ -6,8 +6,15 @@ import { Navbar } from "@/components/layout/Navbar";
 const Hero = ({ data }: { data: typeof gymContent }) => (
   <header
     id="hero"
-    className="w-full max-w-screen-2xl mx-auto min-h-[65vh] flex flex-col items-center justify-center text-center px-6 md:px-10"
+    className="relative w-full max-w-screen-2xl mx-auto min-h-[65vh] flex flex-col items-center justify-center text-center px-6 md:px-10 overflow-hidden"
   >
+    {/* Background gym image */}
+    <div
+      className="absolute inset-0 -z-10 bg-cover bg-center opacity-40"
+      style={{ backgroundImage: "url('/assets/change/1.jpg')" }}
+    />
+    {/* Dark gradient overlay for better text contrast */}
+    <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
     <h1 className="text-5xl md:text-7xl xl:text-8xl font-extrabold tracking-tight">{data.name}</h1>
     <p className="mt-6 text-orange-400 text-xl md:text-2xl xl:text-3xl font-semibold">{data.tagline}</p>
     <p className="mt-6 max-w-2xl text-base md:text-lg text-gray-300 leading-relaxed">
@@ -27,6 +34,21 @@ const Hero = ({ data }: { data: typeof gymContent }) => (
         Join Now
       </a>
     </div>
+    {/* Additional content highlights */}
+    <div className="mt-10 max-w-3xl mx-auto flex flex-col gap-3 text-gray-200 text-sm md:text-base">
+      <p>
+        Premium strength & cardio setup, functional training zone, clean environment, and
+        approachable coaching staff focused on long-term results.
+      </p>
+      <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 text-gray-300 text-xs md:text-sm">
+        <li className="bg-gray-800/50 rounded px-3 py-2">Modern Machines</li>
+        <li className="bg-gray-800/50 rounded px-3 py-2">Goal-Based Coaching</li>
+        <li className="bg-gray-800/50 rounded px-3 py-2">Functional Tools</li>
+        <li className="bg-gray-800/50 rounded px-3 py-2">Hygienic Space</li>
+        <li className="bg-gray-800/50 rounded px-3 py-2">Accessible Entry</li>
+        <li className="bg-gray-800/50 rounded px-3 py-2">NFC Payments</li>
+      </ul>
+    </div>
   </header>
 );
 
@@ -39,14 +61,27 @@ const About = ({ data }: { data: typeof gymContent }) => (
   </section>
 );
 
+const sectionBg = (n: number) =>
+  ["url('/assets/change/1.jpg')",
+   "url('/assets/change/2.jpg')",
+   "url('/assets/change/3.jpg')",
+   "url('/assets/change/4.jpg')"][n % 4];
+
 const Facilities = ({ data }: { data: typeof gymContent }) => (
-  <section id="facilities" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10">
+  <section
+    id="facilities"
+    className="w-full max-w-screen-2xl mx-auto px-6 md:px-10 relative"
+  >
+    <div
+      className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
+      style={{ backgroundImage: sectionBg(0) }}
+    />
     <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left">Facilities</h2>
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
       {data.facilities.map(f => (
         <div
           key={f.title}
-          className="border border-gray-700 rounded-xl p-6 hover:bg-gray-800/60 transition-colors text-center md:text-left flex flex-col gap-3"
+          className="border border-gray-700 rounded-xl p-6 hover:bg-gray-800/60 transition-colors text-center md:text-left flex flex-col gap-3 backdrop-blur-sm bg-black/20"
         >
           <h3 className="font-semibold text-lg md:text-xl">{f.title}</h3>
           <p className="text-xs md:text-sm text-gray-300 leading-relaxed">{f.description}</p>
@@ -56,33 +91,35 @@ const Facilities = ({ data }: { data: typeof gymContent }) => (
   </section>
 );
 
-const Trainers = ({ data }: { data: typeof gymContent }) => {
-  const images = ["/assets/change/1.jpg", "/assets/change/2.jpg", "/assets/change/3.jpg"];
+const Gallery = ({ data }: { data: typeof gymContent }) => {
+  const images = [
+    "/assets/change/1.jpg",
+    "/assets/change/2.jpg",
+    "/assets/change/3.jpg",
+    "/assets/change/4.jpg",
+  ];
   return (
-    <section id="trainers" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10">
-      <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left">Trainers</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 justify-items-center">
-        {data.trainers.map((t, i) => (
-          <div
-            key={t.name + i}
-            className="bg-gray-900/50 w-full rounded-2xl overflow-hidden border border-gray-700 hover:border-orange-500 transition-colors flex flex-col"
+    <section id="gallery" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10 relative">
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: sectionBg(3) }}
+      />
+      <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left">Gallery</h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+        {images.map((src, i) => (
+          <figure
+            key={src + i}
+            className="relative h-48 md:h-56 rounded-xl overflow-hidden group bg-gray-800"
           >
-            <div className="relative h-56 md:h-64">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={images[i % images.length]}
-                alt={t.name}
-                className="w-full h-full object-cover"
-                onError={e => {
-                  (e.currentTarget as HTMLImageElement).src = "/assets/default/trainer.jpg";
-                }}
-              />
-            </div>
-            <div className="p-5 flex flex-col items-center md:items-start gap-1 text-center md:text-left">
-              <h5 className="font-semibold text-lg">{t.name}</h5>
-              <span className="text-xs text-orange-400">{t.speciality}</span>
-            </div>
-          </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src}
+              alt={`gallery-${i}`}
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors" />
+          </figure>
         ))}
       </div>
     </section>
@@ -90,13 +127,20 @@ const Trainers = ({ data }: { data: typeof gymContent }) => {
 };
 
 const Pricing = ({ data }: { data: typeof gymContent }) => (
-  <section id="pricing" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10">
+  <section
+    id="pricing"
+    className="w-full max-w-screen-2xl mx-auto px-6 md:px-10 relative"
+  >
+    <div
+      className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
+      style={{ backgroundImage: sectionBg(2) }}
+    />
     <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left">Pricing</h2>
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
       {data.pricing.map(p => (
         <div
           key={p.plan}
-          className="flex flex-col items-center md:items-start w-full gap-3 p-6 rounded-2xl border border-gray-700 hover:bg-gray-800/50 transition-colors"
+          className="flex flex-col items-center md:items-start w-full gap-3 p-6 rounded-2xl border border-gray-700 hover:bg-gray-800/50 transition-colors backdrop-blur-sm bg-black/25"
         >
           <h3 className="font-semibold text-lg md:text-xl">{p.plan}</h3>
           <span className="text-orange-400 font-bold text-2xl">{p.amount}</span>
@@ -109,45 +153,12 @@ const Pricing = ({ data }: { data: typeof gymContent }) => (
   </section>
 );
 
-const Gallery = ({ data }: { data: typeof gymContent }) => {
-  const candidates = (data.gallery || []).filter(Boolean);
-  const fallback = [
-    "/assets/change/1.jpg",
-    "/assets/change/2.jpg",
-    "/assets/change/3.jpg",
-    "/assets/default/girl1.jpg",
-    "/assets/default/girl2.jpg",
-  ];
-  const images = (candidates.length ? candidates : fallback).slice(0, 10);
-  return (
-    <section id="gallery" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10">
-      <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left">Gallery</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {images.map((src, i) => (
-          <figure
-            key={src + i}
-            className="relative h-48 md:h-56 rounded-xl overflow-hidden group bg-gray-800"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={src}
-              alt={`gallery-${i}`}
-              loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              onError={e => {
-                (e.currentTarget as HTMLImageElement).src = "/assets/default/trainer.jpg";
-              }}
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors" />
-          </figure>
-        ))}
-      </div>
-    </section>
-  );
-};
-
 const Reviews = ({ data }: { data: typeof gymContent }) => (
-  <section id="reviews" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10">
+  <section id="reviews" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10 relative">
+    <div
+      className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
+      style={{ backgroundImage: sectionBg(0) }}
+    />
     <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left">Reviews</h2>
     <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
       {data.reviews.map((r, i) => (
@@ -170,7 +181,11 @@ const Reviews = ({ data }: { data: typeof gymContent }) => (
 );
 
 const Contact = ({ data }: { data: typeof gymContent }) => (
-  <section id="contact" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10">
+  <section id="contact" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10 relative">
+    <div
+      className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
+      style={{ backgroundImage: sectionBg(1) }}
+    />
     <h2 className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left">Contact & Location</h2>
     <div className="grid md:grid-cols-2 gap-10">
       <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
@@ -219,10 +234,9 @@ const GymHome = () => {
         <Navbar name={gymContent.name} />
         <Hero data={gymContent} />
         <About data={gymContent} />
-        <Facilities data={gymContent} />
-        <Trainers data={gymContent} />
-        <Pricing data={gymContent} />
         <Gallery data={gymContent} />
+        <Facilities data={gymContent} />
+        <Pricing data={gymContent} />
         <Reviews data={gymContent} />
         <Contact data={gymContent} />
       </main>

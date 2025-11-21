@@ -8,7 +8,7 @@ interface NavbarProps {
 
 export const Navbar = ({ name }: NavbarProps) => {
   const [open, setOpen] = useState(false);
-  const items = ["hero", "about", "facilities", "trainers", "pricing", "gallery", "reviews", "contact"];
+  const items = ["hero", "about", "gallery", "facilities", "pricing", "reviews", "contact"];
 
   // Lock body scroll when menu is open and close on Escape
   useEffect(() => {
@@ -40,7 +40,10 @@ export const Navbar = ({ name }: NavbarProps) => {
           {items.map(id => (
             <li key={id}>
               <Link href={`#${id}`} className="hover:text-orange-400 transition-colors">
-                {id.charAt(0).toUpperCase() + id.slice(1)}
+                {id
+                  .split("-")
+                  .map(p => p.charAt(0).toUpperCase() + p.slice(1))
+                  .join(" ")}
               </Link>
             </li>
           ))}
@@ -107,7 +110,10 @@ export const Navbar = ({ name }: NavbarProps) => {
                       onClick={() => setOpen(false)}
                       className="block text-white text-xl font-medium tracking-wide hover:text-orange-400 transition-colors"
                     >
-                      {id.charAt(0).toUpperCase() + id.slice(1)}
+                      {id
+                        .split("-")
+                        .map(p => p.charAt(0).toUpperCase() + p.slice(1))
+                        .join(" ")}
                     </a>
                   </motion.li>
                 ))}

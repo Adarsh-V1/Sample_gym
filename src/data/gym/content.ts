@@ -34,73 +34,72 @@ export interface GymContent {
 }
 
 export const gymContent: GymContent = {
-  name: "Strength The Gym & Spa",
-  tagline: "Largest & Best Gym in West Delhi",
-  address: "Opposite HDFC Bank, Ganesh Nagar, Tilak Nagar, New Delhi, Delhi, 110018",
-  phone: "+91 99686 81007",
-  openingHours: "Mon–Sun: 5:00 AM – 11:30 PM",
+  name: "Fitness World Unisex Gym",
+  tagline: "Top-notch Equipment • Motivating Atmosphere • Unisex Training",
+  address: "Jafar Nagar, New Mankapur, Nagpur, Maharashtra 440030",
+  phone: "+91 85529 49501",
+  openingHours: "Mon–Sun: 6:00 AM – 10:00 PM",
   googleMapEmbedUrl:
-    "https://www.google.com/maps?q=Strength+The+Gym+%26+Spa+Tilak+Nagar&output=embed",
+    "https://www.google.com/maps?q=Fitness+World+Unisex+Gym+Nagpur&output=embed",
   about:
-    "Strength The Gym & Spa is a premium fitness center in West Delhi featuring high-quality, well-maintained machines, energetic classes like Zumba and Bhangra aerobics, and professional trainers. Women-owned, clean, motivating ambiance with online classes, on-site services, and modern amenities.",
+    "Fitness World Unisex Gym (फिटनेस वर्ल्ड यूनिसेक्स जिम) delivers a premium, motivating environment with modern machines, clean workout spaces, and a friendly, goal-driven staff. Equal focus on strength, conditioning, aesthetics, and sustainable wellness—ideal for both beginners and advanced athletes.",
   facilities: [
-    { title: "Strength Training", description: "Racks, plates, selectorized machines, free weights." },
-    { title: "Cardio Zone", description: "Treadmills, bikes, ellipticals, rowers for all levels." },
-    { title: "Zumba Studio", description: "High-energy Zumba classes that keep you moving." },
-    { title: "Bhangra Aerobics", description: "Fun, cultural cardio sessions to level up stamina." },
-    { title: "Personal Training", description: "Certified, friendly trainers guiding proper form & plans." },
-    { title: "Online Classes", description: "Train remotely with live and guided sessions." },
-    { title: "Amenities", description: "Restrooms, Wi‑Fi (Free), clean and hygienic environment." },
-    { title: "Payments", description: "Credit/Debit cards, Google Pay, NFC mobile payments accepted." },
-    { title: "Parking", description: "Free parking lot and free street parking nearby." },
-    { title: "Accessibility", description: "Wheelchair-accessible car park." },
+    { title: "Free Weight Zone", description: "Complete dumbbell set, Olympic barbells, calibrated plates, flat/incline benches." },
+    { title: "Strength Machines", description: "Plate-loaded & selectorized machines targeting every major muscle group." },
+    { title: "Squat & Power Racks", description: "Multiple racks with safety pins, landmine attachments & pull-up bars." },
+    { title: "Cardio Endurance", description: "Treadmills, spin bikes, air bikes, rower & elliptical for heart health and fat loss." },
+    { title: "Functional Rig", description: "TRX, resistance bands, sled, battle ropes, plyo boxes for athletic conditioning." },
+    { title: "Mobility & Stretch Zone", description: "Foam rollers, mats, bands for recovery, activation & flexibility drills." },
+    { title: "Core & Stability", description: "Medicine balls, kettlebells, ab wheels, Swiss balls for trunk development." },
+    { title: "Clean & Hygienic Space", description: "Regular sanitization, organized layout, ventilation & tidy flooring." },
+    { title: "Guided Personal Coaching", description: "Goal-based plans: fat loss, muscle gain, strength, posture & rehab basics." },
+    { title: "Accessibility", description: "Wheelchair-accessible entrance and spacious pathways." },
+    { title: "Digital Payments", description: "NFC mobile payments + standard card & UPI support." },
+    { title: "Member Support", description: "Friendly staff fostering a motivating, inclusive training atmosphere." },
   ],
   pricing: [
-    { plan: "Monthly", amount: "₹1,499" },
-    { plan: "Quarterly", amount: "₹3,999" },
-    { plan: "Half-Yearly", amount: "₹7,499" },
-    { plan: "Yearly", amount: "₹13,999" },
+    { plan: "Monthly", amount: "₹1,299" },
+    { plan: "Quarterly", amount: "₹3,599" },
+    { plan: "Half-Yearly", amount: "₹6,799" },
+    { plan: "Yearly", amount: "₹12,499" },
   ],
   trainers: [
-    { name: "Head Coach", speciality: "Strength & Conditioning", image: "" },
-    { name: "Group Instructor", speciality: "Zumba & Bhangra Aerobics", image: "" },
-    { name: "Personal Trainer", speciality: "Weight Loss & Hypertrophy", image: "" },
+    { name: "Lead Trainer", speciality: "Strength & Form Coaching", image: "" },
+    { name: "Transformation Coach", speciality: "Fat Loss & Muscle Gain", image: "" },
+    { name: "Functional Specialist", speciality: "Mobility & Conditioning", image: "" },
   ],
   // Leave empty to use /assets/change/1.jpg..6.jpg or defaults from /assets/default/
   gallery: [],
   reviews: [
     {
-      author: "Nikxajmxni",
+      author: "Review Summary",
       rating: 5,
-      text:
-        "Environment is amazing—clean, motivating, and comfortable. Machines are well-maintained and of high quality. Trainers are professional and friendly.",
+      text: "Great gym with top-notch equipment, friendly staff, motivating atmosphere, and variety of machines.",
     },
     {
-      author: "Richa Jangid",
+      author: "Ravikant K",
       rating: 5,
-      text:
-        "One of the best fitness experiences—clean, organized, and fully equipped whether weightlifting or cardio.",
+      text: "Electric energy—perfect environment to crush goals. You instantly feel you’re in the right place to level up.",
     },
     {
-      author: "Raman Saluja",
+      author: "Sohail Khan",
       rating: 5,
-      text:
-        "Unique classes like Bhangra aerobics and Zumba are not just workouts but super fun!",
+      text: "Well-equipped, clean workout spaces, motivating environment for men and women. Staff is friendly and supportive.",
     },
-    { author: "Gurmeet Singh", rating: 5, text: "Very nice gym and trainers—highly recommended." },
-    { author: "Arjun Kumar", rating: 5, text: "Best gym in the area, cooperative staff." },
     {
-      author: "Pankaj Kapoor",
+      author: "Member Feedback",
       rating: 5,
-      text:
-        "Best gym in Tilak Nagar. Great atmosphere and updated machines. Their Uttam Nagar branch looks good too.",
+      text: "Nice gym for workout—variety of machines available to train every muscle group effectively.",
+    },
+    {
+      author: "Motivation Highlight",
+      rating: 5,
+      text: "Trainers are approachable; their guidance builds a positive long-term training mindset.",
     },
   ],
   // Optional external links to show in About
   links: [
-    { label: "Facebook", url: "https://facebook.com" },
-    // Add more if available:
-    // { label: "Instagram", url: "https://instagram.com/yourgym" },
-    // { label: "Website", url: "https://yourgym.example.com" },
+    { label: "Directions", url: "https://www.google.com/maps?q=Fitness+World+Unisex+Gym+Nagpur" },
+    { label: "Call", url: "tel:+918552949501" },
   ],
 };

@@ -7,27 +7,38 @@ interface FacilitiesProps {
 
 export const Facilities = ({ data }: FacilitiesProps) => {
   return (
-    <section id="facilities" className="max-w-6xl mx-auto px-4">
+    <section id="facilities" className="max-w-screen-2xl mx-auto px-6 md:px-10 relative">
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: "url('/assets/change/3.jpg')" }}
+      />
       <motion.h3
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
+        className="text-4xl md:text-5xl font-bold mb-10 text-center md:text-left"
       >
         Facilities
       </motion.h3>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
         {data.facilities.map((f, i) => (
           <motion.div
             key={f.title}
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.05 }}
-            className="border border-gray-700 rounded-lg p-5 hover:bg-gray-800/60 transition-colors group text-center md:text-left"
+            transition={{ delay: i * 0.04 }}
+            className="group relative border border-gray-700 rounded-xl p-5 flex flex-col gap-3 backdrop-blur-sm bg-black/25 hover:bg-black/40 transition-colors"
           >
-            <h4 className="font-semibold text-lg mb-2 group-hover:text-orange-400">{f.title}</h4>
-            <p className="text-xs md:text-sm text-gray-300 line-clamp-4">{f.description}</p>
+            <span className="absolute top-2 right-2 text-[10px] px-2 py-1 rounded-full bg-orange-500/10 text-orange-400 border border-orange-500/30">
+              {i + 1}
+            </span>
+            <h4 className="font-semibold text-sm md:text-base lg:text-lg group-hover:text-orange-400 transition-colors">
+              {f.title}
+            </h4>
+            <p className="text-[11px] md:text-xs lg:text-sm text-gray-300 leading-relaxed line-clamp-4">
+              {f.description}
+            </p>
           </motion.div>
         ))}
       </div>

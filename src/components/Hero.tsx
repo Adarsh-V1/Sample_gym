@@ -20,7 +20,7 @@ export const Hero = ({ data }: HeroProps) => {
     "/assets/change/1.jpg",
     "/assets/default/girl1.jpg",
   ].filter(Boolean) as string[];
-  const heroBg = heroCandidates[0];
+  const heroBg = ["/assets/change/1.jpg","/assets/change/2.jpg","/assets/change/3.jpg","/assets/change/4.jpg"][0];
 
   return (
     <header id="hero" className="relative flex items-center justify-center min-h-[70vh] pt-10">
@@ -43,7 +43,8 @@ export const Hero = ({ data }: HeroProps) => {
           </a>
         </motion.div>
       </div>
-      <div className="absolute inset-0 -z-10 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('${heroBg}')` }} />
+      <div className="absolute inset-0 -z-10 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('${heroBg}')` }} />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
     </header>
   );
 };

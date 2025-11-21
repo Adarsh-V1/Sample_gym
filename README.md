@@ -3,7 +3,7 @@
 A reusable animated gym landing site built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. All gym-specific content is editable from a single file: `src/data/gym/content.ts`.
 
 ## Sections
-Hero, About, Facilities, Trainers, Pricing, Gallery (with fallbacks), Reviews, Contact & Location.
+Hero, About, Gallery, Facilities, Pricing, Reviews, Contact & Location.
 
 ## Quick Start
 1. Clone repo
