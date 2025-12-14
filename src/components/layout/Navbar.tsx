@@ -26,7 +26,7 @@ export const Navbar = ({ name }: NavbarProps) => {
 
   return (
     <nav className="h-16 md:h-20 flex items-center sticky top-0 bg-black/70 backdrop-blur z-40">
-      <article className="max-w-7xl mx-auto flex-1 flex items-center justify-between px-4">
+      <article className="page-container flex items-center justify-between">
         <motion.span
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}

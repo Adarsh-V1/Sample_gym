@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  background: radial-gradient(circle at top left, #0d0d0f, #000);
+  background: linear-gradient(to bottom, #000000, #000000);
   color: #f3f4f6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,4 +29,28 @@ body {
 
 section {
   @apply py-20;
+}
+
+/* Consistent horizontal margins for all sections */
+.page-container {
+  @apply w-full max-w-6xl mx-auto px-6 md:px-10;
+}
+
+.starfield-bg {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: -50;
+  opacity: 0.13;
+  /* Subtle, sparse, random starfield using SVG data URI */
+  background:
+    url("data:image/svg+xml;utf8,<svg width='1000' height='1000' xmlns='http://www.w3.org/2000/svg'><circle cx='120' cy='80' r='1.2' fill='white' opacity='0.7'/><circle cx='300' cy='200' r='0.8' fill='white' opacity='0.5'/><circle cx='700' cy='150' r='1.1' fill='white' opacity='0.8'/><circle cx='900' cy='400' r='0.7' fill='white' opacity='0.4'/><circle cx='500' cy='600' r='1.4' fill='white' opacity='0.9'/><circle cx='800' cy='800' r='0.9' fill='white' opacity='0.6'/><circle cx='200' cy='900' r='1.2' fill='white' opacity='0.7'/><circle cx='600' cy='300' r='0.6' fill='white' opacity='0.3'/><circle cx='400' cy='850' r='1.1' fill='white' opacity='0.8'/><circle cx='950' cy='950' r='0.5' fill='white' opacity='0.2'/></svg>")
+    repeat;
+  background-size: 600px 600px;
+  animation: starfield-float 120s linear infinite;
+}
+
+@keyframes starfield-float {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 400px; }
 }

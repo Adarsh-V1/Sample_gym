@@ -7,7 +7,7 @@ interface FacilitiesProps {
 
 export const Facilities = ({ data }: FacilitiesProps) => {
   return (
-    <section id="facilities" className="max-w-screen-2xl mx-auto px-6 md:px-10 relative">
+    <section id="facilities" className="relative page-container">
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
         style={{ backgroundImage: "url('/assets/change/3.jpg')" }}

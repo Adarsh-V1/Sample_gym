@@ -15,24 +15,45 @@ const variants = {
 };
 
 export const Hero = ({ data }: HeroProps) => {
-  const heroCandidates = [
-    data.gallery?.[0],
-    "/assets/change/1.jpg",
-    "/assets/default/girl1.jpg",
-  ].filter(Boolean) as string[];
   const heroBg = ["/assets/change/1.jpg","/assets/change/2.jpg","/assets/change/3.jpg","/assets/change/4.jpg"][0];
+
+  const highlightBadges = [
+    "Brand‑New Facility",
+    "Top Equipment",
+    "Friendly Trainers",
+    "Clean & Maintained",
+    "Motivating Atmosphere",
+    "Google Pay",
+  ];
+  const featureCards = [
+    { t: "Pro Guidance", d: "Proactive, professional trainers for form and progression." },
+    { t: "Premium Machines", d: "Well‑maintained equipment for strength & cardio." },
+    { t: "Clean Routine", d: "Sanitized spaces and organized layout." },
+    { t: "Solid Service", d: "Supportive staff and quick assistance." },
+    { t: "Online/Outdoor", d: "Flexible service options when needed." },
+    { t: "Easy Payments", d: "Google Pay accepted for hassle‑free checkout." },
+  ];
 
   return (
     <header id="hero" className="relative flex items-center justify-center min-h-[70vh] pt-10">
-      <div className="max-w-5xl mx-auto px-4 flex flex-col items-center text-center gap-4">
+      <div className="page-container flex flex-col items-center text-center gap-4">
         <motion.h1 custom={0} initial="hidden" animate="show" variants={variants} className="text-4xl md:text-6xl font-extrabold tracking-tight">
           {data.name}
         </motion.h1>
         <motion.h2 custom={1} initial="hidden" animate="show" variants={variants} className="text-xl md:text-2xl text-orange-400 font-semibold">
           {data.tagline}
         </motion.h2>
-        <motion.p custom={2} initial="hidden" animate="show" variants={variants} className="text-sm md:text-base text-gray-300 max-w-[60ch]">
-          {data.about.slice(0, 160)}...
+        <motion.p
+          custom={1.5}
+          initial="hidden"
+          animate="show"
+          variants={variants}
+          className="text-2xl md:text-4xl font-light italic text-gray-200"
+        >
+          “Progress is built one focused rep at a time.”
+        </motion.p>
+        <motion.p custom={2} initial="hidden" animate="show" variants={variants} className="text-sm md:text-base text-gray-300 max-w-[65ch]">
+          {data.about.slice(0, 220)}...
         </motion.p>
         <motion.div custom={3} initial="hidden" animate="show" variants={variants} className="flex gap-4 mt-4">
           <a href="#pricing" className="px-5 py-3 rounded-md bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium transition-colors">
@@ -41,6 +62,25 @@ export const Hero = ({ data }: HeroProps) => {
           <a href="#contact" className="px-5 py-3 rounded-md border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black text-sm font-medium transition-colors">
             Join Now
           </a>
+        </motion.div>
+
+        {/* Highlight badges */}
+        <motion.ul custom={3.5} initial="hidden" animate="show" variants={variants} className="flex flex-wrap justify-center gap-2 mt-6">
+          {highlightBadges.map(b => (
+            <li key={b} className="px-3 py-1 rounded-full bg-gray-800/60 border border-gray-700 text-[11px] md:text-xs text-gray-200">
+              {b}
+            </li>
+          ))}
+        </motion.ul>
+
+        {/* Feature cards */}
+        <motion.div custom={4} initial="hidden" animate="show" variants={variants} className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8 w-full max-w-3xl">
+          {featureCards.map(card => (
+            <div key={card.t} className="p-3 rounded-lg bg-black/30 border border-gray-700 text-left hover:border-orange-500/50 hover:bg-black/40 transition-colors">
+              <h5 className="text-xs font-semibold text-orange-400">{card.t}</h5>
+              <p className="text-[11px] text-gray-300 mt-1 leading-relaxed">{card.d}</p>
+            </div>
+          ))}
         </motion.div>
       </div>
       <div className="absolute inset-0 -z-10 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('${heroBg}')` }} />

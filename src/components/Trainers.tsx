@@ -9,7 +9,7 @@ const images = [
 ];
 
 export const Trainers = () => (
-  <section id="gym-images" className="max-w-6xl mx-auto px-4">
+  <section id="gym-images" className="page-container">
     <h3 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
       Gym Visuals
     </h3>

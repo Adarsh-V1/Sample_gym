@@ -7,7 +7,7 @@ interface ContactProps {
 
 export const Contact = ({ data }: ContactProps) => {
   return (
-    <section id="contact" className="max-w-6xl mx-auto px-4">
+    <section id="contact" className="page-container">
       <motion.h3
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -29,75 +29,62 @@ export interface GymContent {
   trainers: GymTrainer[];
   gallery: string[];
   reviews: GymReview[];
-  // New optional external links list
   links?: { label: string; url: string }[];
 }
 
 export const gymContent: GymContent = {
-  name: "COPS FITNESS & GYM",
-  tagline: "Discipline • Guidance • Inclusive High-Result Training (4.8★)",
-  address: "Plot 4, Sector D, Slice 5, Part II, Scheme 78, Vijay Nagar, Indore, Madhya Pradesh 452010",
-  phone: "+91 88238 00087",
-  openingHours: "Mon–Sun: 6:00 AM – 10:00 PM",
-  googleMapEmbedUrl: "https://www.google.com/maps?q=COPS+Fitness+%26+Gym+Indore+Vijay+Nagar&output=embed",
+  name: "Tough Tribes Fitness Madurai",
+  tagline: "Tough Tribes Fitness Madurai · 4.9★ (849 Reviews)",
+  address: "No-4, SBOA Colony 3rd St, Ponmeni, Chandragandhi Nagar, Madurai, Tamil Nadu 625016",
+  phone: "08015203005",
+  openingHours: "Open · Check for closing time",
+  googleMapEmbedUrl:
+    "https://www.google.com/maps?q=Tough+Tribes+Fitness+Madurai&output=embed",
   about:
-    "COPS FITNESS & GYM (कॉप्स फिटनेस & जिम) is a 4.8★ rated, LGBTQ+ friendly, women‑owned facility known for disciplined environment, knowledgeable & cooperative trainers, structured muscle gain and fat loss guidance, goal tracking support, and balanced motivating atmosphere. Offers online, outdoor, and on‑site services plus broad payment options (cheques, cards, Google Pay, NFC).",
+    "Tough Tribes Fitness Madurai is a premier fitness center dedicated to transforming your physique and health. We offer a welcoming, motivating atmosphere with top-quality equipment and experienced trainers. Our unique Karla Kattai training program enhances muscle flexibility and physique development. Members enjoy online classes, outdoor training sessions in ventilated spaces, and personalized guidance from certified trainers. With friendly staff, clean facilities, and multiple payment options including Google Pay, we're the perfect choice for your fitness journey.",
   facilities: [
-    { title: "Disciplined Training Culture", description: "Environment fostering dedication, structure, and daily consistency." },
-    { title: "Trainer Guidance & Expertise", description: "Qualified coaches guiding form, progression, and individualized adjustments." },
-    { title: "Equipment Variety", description: "Comprehensive free weights and strength accessories for multi-phase programs." },
-    { title: "Machine Suite", description: "Maintained resistance & cardio machines supporting scalable workloads." },
-    { title: "Motivating Atmosphere", description: "Positive energy, focused members, and supportive staff interactions." },
-    { title: "Goal Tracking Support", description: "Progress checkpoints for strength, composition, and performance targets." },
-    { title: "Diet & Basic Nutrition Help", description: "Foundational meal guidance aligned to body recomposition goals." },
-    { title: "Cooperative Staff", description: "Approachable trainers & desk staff improving member experience." },
-    { title: "Muscle Gain Programming", description: "Structured overload plans for hypertrophy and lean mass accrual." },
-    { title: "Inclusive & Women-Owned", description: "LGBTQ+ friendly space with women‑owned leadership encouraging respect." },
-    { title: "Service Options", description: "Online classes, outdoor training sessions, and on‑site coaching." },
-    { title: "Payments (Cheques & Digital)", description: "Cheques, debit/credit cards, Google Pay & NFC mobile payments supported." },
-    { title: "Restroom Amenity", description: "Maintained facilities for hygiene & comfort." },
+    { title: "Top Equipment", description: "Amazing array of modern, well-maintained machines for strength and cardio training." },
+    { title: "Friendly Trainers", description: "Experienced trainers including Dinesh, Anju, and Angai providing personalized coaching and customized workout plans." },
+    { title: "Karla Kattai Training", description: "Unique traditional flexibility training program for muscle development and physique shaping." },
+    { title: "Clean & Hygienic", description: "Gym is consistently clean and maintained to the highest standards for member safety." },
+    { title: "Outdoor Sessions", description: "Weekly outdoor training sessions in comfortable, ventilated spaces for fresh, motivating workouts." },
+    { title: "Online Classes", description: "Flexible online training options for members who prefer remote workout sessions." },
+    { title: "Welcoming Atmosphere", description: "Positive and encouraging environment that motivates consistency and member retention." },
+    { title: "Gender-Neutral Restrooms", description: "Modern restroom facilities designed for all members with cleanliness prioritized." },
+    { title: "Google Pay Accepted", description: "Convenient contactless payment option available for all transactions." },
+    { title: "Membership Options", description: "Flexible membership plans tailored to individual fitness goals and schedules." },
   ],
   pricing: [
-    { plan: "Monthly", amount: "₹1,499" },
-    { plan: "Quarterly", amount: "₹4,199" },
-    { plan: "Half-Yearly", amount: "₹7,799" },
-    { plan: "Yearly", amount: "₹14,499" },
+    { plan: "Monthly", amount: "₹1,500" },
+    { plan: "Quarterly", amount: "₹4,000" },
+    { plan: "Half-Yearly", amount: "₹7,500" },
+    { plan: "Yearly", amount: "₹13,500" },
   ],
   trainers: [
-    { name: "Lead Trainer", speciality: "Strength & Muscle Gain Programming", image: "" },
-    { name: "Form & Mobility Coach", speciality: "Technique & Injury Prevention", image: "" },
-    { name: "Nutrition Support Coach", speciality: "Basic Diet & Goal Alignment", image: "" },
+    { name: "Dinesh", speciality: "Strength Training & Muscle Building", image: "" },
+    { name: "Anju", speciality: "Personal Training & Form Guidance", image: "" },
+    { name: "Angai", speciality: "Customized Workout Plans & Consistency Coaching", image: "" },
   ],
-  gallery: [],
+  gallery: [
+    "/assets/change/1.jpg",
+    "/assets/change/2.jpg",
+    "/assets/change/3.jpg",
+    "/assets/change/4.jpg",
+  ],
   reviews: [
     {
-      author: "Shraddha Verma",
+      author: "Jeysri Malini",
       rating: 5,
-      text: "Discipline, dedication, and right guidance—started with zero knowledge; trainers helped with workouts and diet consistently.",
+      text: "I've been training here for two months, and the experience has been exceptional. My trainer, Anju, understands my body, recognises my potential, and guides me with the right balance of support and challenge. The gym is clean, hygienic, and has a very welcoming atmosphere. Overall, a fantastic place to work out."
     },
     {
-      author: "Trainer Expertise",
+      author: "Abi",
       rating: 5,
-      text: "Supportive certified guidance—clear form corrections and structured progression.",
-    },
-    {
-      author: "Motivation & Goals",
-      rating: 5,
-      text: "Atmosphere keeps goals visible—easy to sustain effort over weeks.",
-    },
-    {
-      author: "Cooperative Staff",
-      rating: 5,
-      text: "Staff helpful and approachable—questions solved quickly.",
-    },
-    {
-      author: "Equipment & Machines",
-      rating: 5,
-      text: "Good mix of machines & free weights—supports varied training blocks.",
-    },
+      text: "Best trainer I've worked with! Always encouraging, gives customised workout plans, and helps me stay consistent. I've seen great improvement in my fitness. I have lost nearly 7kgs in 2 months with trainer Angai. Highly recommended."
+    }
   ],
   links: [
-    { label: "Directions", url: "https://www.google.com/maps?q=COPS+Fitness+%26+Gym+Indore+Vijay+Nagar" },
-    { label: "Call", url: "tel:+918823800087" },
+    { label: "Directions", url: "https://www.google.com/maps?q=Tough+Tribes+Fitness+Madurai" },
+    { label: "Call", url: "tel:08015203005" },
   ],
 };

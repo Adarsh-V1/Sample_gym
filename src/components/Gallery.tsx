@@ -1,16 +1,19 @@
 import Image from "next/image";
+import { gymContent } from "@/data/gym/content";
 
-const CHANGE_IMAGES = [
+const FALLBACK_IMAGES = [
   "/assets/change/1.jpg",
   "/assets/change/2.jpg",
   "/assets/change/3.jpg",
   "/assets/change/4.jpg",
 ];
 
+// Build list: prefer custom gallery, fill with fallback, ensure exactly 4
+const images = [...(gymContent.gallery?.filter(Boolean) ?? []), ...FALLBACK_IMAGES].slice(0, 4);
+
 export const Gallery = () => {
-  const images = CHANGE_IMAGES; // always exactly the 4 gym images
   return (
-    <section id="gallery" className="w-full max-w-screen-2xl mx-auto px-6 md:px-10 relative">
+    <section id="gallery" className="relative page-container">
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
         style={{ backgroundImage: "url('/assets/change/2.jpg')" }}

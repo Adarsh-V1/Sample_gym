@@ -21,7 +21,7 @@ export const About = ({ data }: AboutProps) => {
   ];
 
   return (
-    <section id="about" className="max-w-5xl mx-auto px-4">
+    <section id="about" className="page-container">
       <motion.h3
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}

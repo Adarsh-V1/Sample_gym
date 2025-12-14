@@ -7,7 +7,7 @@ interface ReviewsProps {
 
 export const Reviews = ({ data }: ReviewsProps) => {
   return (
-    <section id="reviews" className="max-w-5xl mx-auto px-4">
+    <section id="reviews" className="page-container">
       <motion.h3
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

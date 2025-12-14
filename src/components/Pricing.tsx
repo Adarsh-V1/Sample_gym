@@ -7,7 +7,7 @@ interface PricingProps {
 
 export const Pricing = ({ data }: PricingProps) => {
   return (
-    <section id="pricing" className="max-w-5xl mx-auto px-4">
+    <section id="pricing" className="page-container">
       <motion.h3
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
