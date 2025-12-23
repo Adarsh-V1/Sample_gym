@@ -33,37 +33,37 @@ export interface GymContent {
 }
 
 export const gymContent: GymContent = {
-  name: "Tough Tribes Fitness Madurai",
-  tagline: "Tough Tribes Fitness Madurai · 4.9★ (849 Reviews)",
-  address: "No-4, SBOA Colony 3rd St, Ponmeni, Chandragandhi Nagar, Madurai, Tamil Nadu 625016",
-  phone: "08015203005",
-  openingHours: "Open · Check for closing time",
+  name: "The War House Gym (Rise & Grind)",
+  tagline: "The War House Gym (Rise & Grind) - 4.8 (58 Reviews)",
+  address: "164, Pragathi Enclave, Miyapur, Hyderabad, Telangana 500049",
+  phone: "095400 41026",
+  openingHours: "Open - Closes 9 pm",
   googleMapEmbedUrl:
-    "https://www.google.com/maps?q=Tough+Tribes+Fitness+Madurai&output=embed",
+    "https://www.google.com/maps?q=164+Pragathi+Enclave+Miyapur+Hyderabad+500049&output=embed",
   about:
-    "Tough Tribes Fitness Madurai is a premier fitness center dedicated to transforming your physique and health. We offer a welcoming, motivating atmosphere with top-quality equipment and experienced trainers. Our unique Karla Kattai training program enhances muscle flexibility and physique development. Members enjoy online classes, outdoor training sessions in ventilated spaces, and personalized guidance from certified trainers. With friendly staff, clean facilities, and multiple payment options including Google Pay, we're the perfect choice for your fitness journey.",
+    "The War House Gym (Rise & Grind) is a well-established fitness centre focused on effective physical transformation in a motivating environment. Conveniently located and well connected, the gym features modern equipment across two floors, multiple sanitization stations, and friendly, supportive staff. Appointments are available and the facility accepts debit cards, NFC mobile payments, and credit cards. A clean, well-organized space makes it easy to focus on your goals with personalised assistance when needed.",
   facilities: [
-    { title: "Top Equipment", description: "Amazing array of modern, well-maintained machines for strength and cardio training." },
-    { title: "Friendly Trainers", description: "Experienced trainers including Dinesh, Anju, and Angai providing personalized coaching and customized workout plans." },
-    { title: "Karla Kattai Training", description: "Unique traditional flexibility training program for muscle development and physique shaping." },
-    { title: "Clean & Hygienic", description: "Gym is consistently clean and maintained to the highest standards for member safety." },
-    { title: "Outdoor Sessions", description: "Weekly outdoor training sessions in comfortable, ventilated spaces for fresh, motivating workouts." },
-    { title: "Online Classes", description: "Flexible online training options for members who prefer remote workout sessions." },
-    { title: "Welcoming Atmosphere", description: "Positive and encouraging environment that motivates consistency and member retention." },
-    { title: "Gender-Neutral Restrooms", description: "Modern restroom facilities designed for all members with cleanliness prioritized." },
-    { title: "Google Pay Accepted", description: "Convenient contactless payment option available for all transactions." },
-    { title: "Membership Options", description: "Flexible membership plans tailored to individual fitness goals and schedules." },
+    { title: "Two Floors", description: "Spacious layout across two floors to avoid crowding and improve workout flow." },
+    { title: "Modern Equipment", description: "A range of fairly new machines and free weights for strength and cardio." },
+    { title: "Multiple Sanitizers", description: "Sanitizer stations placed throughout the gym to maintain hygiene." },
+    { title: "Well Connected", description: "Easily accessible by road and well connected to local transport." },
+    { title: "Friendly Staff", description: "Supportive staff and trainers focused on helping members achieve results." },
+    { title: "Clean Restrooms", description: "Maintained hygiene standards in restrooms and changing areas." },
+    { title: "Appointment Options", description: "Appointment-based sessions available for focused personal training." },
+    { title: "Cashless Payments", description: "Accepts debit cards, NFC mobile payments, and credit cards." },
+    { title: "Popular Times", description: "Often busy during early mornings and evenings—check peak times." },
+    { title: "Support for Transformation", description: "Programs and guidance tailored for lasting physical transformation." },
   ],
   pricing: [
-    { plan: "Monthly", amount: "₹1,500" },
-    { plan: "Quarterly", amount: "₹4,000" },
-    { plan: "Half-Yearly", amount: "₹7,500" },
-    { plan: "Yearly", amount: "₹13,500" },
+    { plan: "Monthly", amount: "INR 1,200" },
+    { plan: "Quarterly", amount: "INR 3,300" },
+    { plan: "Half-Yearly", amount: "INR 6,000" },
+    { plan: "Yearly", amount: "INR 11,000" },
   ],
   trainers: [
-    { name: "Dinesh", speciality: "Strength Training & Muscle Building", image: "" },
-    { name: "Anju", speciality: "Personal Training & Form Guidance", image: "" },
-    { name: "Angai", speciality: "Customized Workout Plans & Consistency Coaching", image: "" },
+    { name: "In-house Trainer Team", speciality: "Strength & Conditioning / Personal Training", image: "" },
+    { name: "Head Coach", speciality: "Program Design & Transformation", image: "" },
+    { name: "Support Staff", speciality: "Member Guidance & Safety", image: "" },
   ],
   gallery: [
     "/assets/change/1.jpg",
@@ -73,18 +73,20 @@ export const gymContent: GymContent = {
   ],
   reviews: [
     {
-      author: "Jeysri Malini",
+      author: "Sumantra Chanda",
       rating: 5,
-      text: "I've been training here for two months, and the experience has been exceptional. My trainer, Anju, understands my body, recognises my potential, and guides me with the right balance of support and challenge. The gym is clean, hygienic, and has a very welcoming atmosphere. Overall, a fantastic place to work out."
+      text:
+        "We are not that much used to accept any change. So any change / transformation is the most challenging part of our life. And when it is about physical transformation then it is like the most critical thing for anyone. Physical transformation ... Great support and environment here."
     },
     {
-      author: "Abi",
+      author: "Siddhartha Mohta",
       rating: 5,
-      text: "Best trainer I've worked with! Always encouraging, gives customised workout plans, and helps me stay consistent. I've seen great improvement in my fitness. I have lost nearly 7kgs in 2 months with trainer Angai. Highly recommended."
+      text:
+        "It's been quite some time I've been here in this gym. It's good and divided in two floors which doesn't make it look crowded. The equipment is good and fairly new. They have multiple sanitizers in place which is great in COVID times."
     }
   ],
   links: [
-    { label: "Directions", url: "https://www.google.com/maps?q=Tough+Tribes+Fitness+Madurai" },
-    { label: "Call", url: "tel:08015203005" },
+    { label: "Directions", url: "https://www.google.com/maps?q=164+Pragathi+Enclave+Miyapur+Hyderabad+500049" },
+    { label: "Call", url: "tel:09540041026" },
   ],
 };
