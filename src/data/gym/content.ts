@@ -47,7 +47,7 @@ export const gymContent: GymContent = {
   googleMapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.121630615369!2d73.7076984!3d24.5504586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967eff6a57b7ffd%3A0x92482540324ce73b!2sScult%20Fit!5e0!3m2!1sen!2sin!4v1767095266189!5m2!1sen!2sin",
   about:
-    "Welcome to Scult Fit, your premier fitness destination in Bhuwana, Udaipur. We pride ourselves on creating an inclusive, motivating environment where every member—from complete beginners to seasoned athletes—can achieve their fitness goals. Our state-of-the-art facility features top-tier cardio and strength equipment, dedicated free-weight zones, and spacious functional training areas. Our certified trainers bring years of expertise in strength conditioning, weight loss, muscle building, and personalized coaching. Join our growing community and experience the difference that professional guidance, quality equipment, and genuine support can make in your fitness journey.",
+    "Welcome to Scult Fit, your premier fitness destination in Bhuwana, Udaipur. We pride ourselves on creating an motivating environment where every member from complete beginners to seasoned athletes can achieve their fitness goals. Join our growing community and experience the difference that professional guidance, quality equipment, and genuine support can make in your fitness journey.",
   facilities: [
     { title: "On-site services", description: "In-person classes and personal training." },
     { title: "Restroom", description: "Clean, well-maintained restrooms." },
