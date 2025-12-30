@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { gymContent } from "@/data/gym/content";
 import { Navbar } from "@/components/layout/Navbar";
-import { Hero } from "@/components/Hero";
+import { Hero } from "@/components/home/Hero";
 import { About } from "@/components/About";
 import { Gallery } from "@/components/Gallery";
 import { Facilities } from "@/components/Facilities";
@@ -25,7 +25,7 @@ const GymHome = () => {
       <div aria-hidden="true" className="starfield-bg fixed inset-0 -z-50 pointer-events-none" />
       <main className="text-gray-100 flex flex-col gap-28">
         <Navbar name={gymContent.name} />
-        <Hero data={gymContent} />
+        <Hero />
         <About data={gymContent} />
         <Gallery />
         <Facilities data={gymContent} />

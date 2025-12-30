@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { type GymContent } from "@/data/gym/content";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface AboutProps {
   data: GymContent;
@@ -55,8 +56,18 @@ export const About = ({ data }: AboutProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
-      className="page-container py-16 md:py-24"
+      className="relative page-container py-16 md:py-24"
     >
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/assets/change/2.jpg"
+          alt="about background"
+          fill
+          className="object-cover opacity-15"
+        />
+      </div>
+
       <motion.h3
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}

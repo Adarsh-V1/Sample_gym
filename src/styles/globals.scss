@@ -97,6 +97,7 @@ p, span, div, a {
 
 section {
   @apply py-20;
+  position: relative; /* ensure sections create stacking context */
 }
 
 /* Consistent horizontal margins for all sections */
@@ -121,4 +122,9 @@ section {
 @keyframes starfield-float {
   0% { background-position: 0 0; }
   100% { background-position: 200px 400px; }
+}
+
+/* Ensure Hero and other sections don't conflict */
+#hero {
+  isolation: isolate; /* create new stacking context */
 }

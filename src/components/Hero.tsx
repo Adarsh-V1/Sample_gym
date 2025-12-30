@@ -21,14 +21,12 @@ export const Hero = ({ data }: HeroProps) => {
     "Friendly Trainers",
     "Clean & Maintained",
     "Motivating Atmosphere",
-    "Google Pay",
   ];
   const featureCards = [
     { t: "Pro Guidance", d: "Proactive, professional trainers for form and progression." },
     { t: "Premium Machines", d: "Well‑maintained equipment for strength & cardio." },
     { t: "Clean Routine", d: "Sanitized spaces and organized layout." },
     { t: "Solid Service", d: "Supportive staff and quick assistance." },
-    { t: "Online/Outdoor", d: "Flexible service options when needed." },
     { t: "Community Vibe", d: "Friendly members fostering motivation." },
   ];
 
@@ -56,7 +54,7 @@ export const Hero = ({ data }: HeroProps) => {
           variants={variants}
           className="text-2xl md:text-4xl font-light italic text-gray-200"
         >
-          “Progress is built one focused rep at a time.”
+          “Progress is built, one focused rep at a time.”
         </motion.p>
         <motion.p custom={2} initial="hidden" animate="show" variants={variants} className="text-sm md:text-base text-gray-300 max-w-[65ch]">
           {data.about.slice(0, 220)}...

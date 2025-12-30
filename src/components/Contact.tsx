@@ -1,5 +1,6 @@
 import { type GymContent } from "@/data/gym/content";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface ContactProps {
   data: GymContent;
@@ -38,8 +39,18 @@ export const Contact = ({ data }: ContactProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.45 }}
-      className="page-container py-16 md:py-24"
+      className="relative page-container py-16 md:py-24"
     >
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/assets/change/1.jpg"
+          alt="contact background"
+          fill
+          className="object-cover opacity-15"
+        />
+      </div>
+
       <motion.h3
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}

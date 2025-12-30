@@ -1,5 +1,6 @@
 import { type GymContent } from "@/data/gym/content";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface FacilitiesProps {
   data: GymContent;
@@ -15,6 +16,16 @@ export const Facilities = ({ data }: FacilitiesProps) => {
       transition={{ duration: 0.45 }}
       className="relative page-container py-16 md:py-24"
     >
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/assets/change/3.jpg"
+          alt="facilities background"
+          fill
+          className="object-cover opacity-15"
+        />
+      </div>
+
       <motion.h3
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
