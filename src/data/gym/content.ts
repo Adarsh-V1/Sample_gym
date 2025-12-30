@@ -45,7 +45,7 @@ export const gymContent: GymContent = {
   logo: "/assets/change/5.jpg",
   openingHours: "Opens 6:00 am · Closes 10:00 pm · Closed on Sunday",
   googleMapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.121630615369!2d73.7076984!3d24.5504586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967eff6a57b7ffd%3A0x92482540324ce73b!2sScult%20Fit!5e0!3m2!1sen!2sin!4v1767095266189!5m2!1sen!2sin",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29017.300804222552!2d73.6586990743164!3d24.618080100000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5006c8d9587%3A0xb6ed25de4da1f729!2sScult%20Fit%20Gym!5e0!3m2!1sen!2sin!4v1767102215965!5m2!1sen!2sin",
   about:
     "Welcome to Scult Fit, your premier fitness destination in Bhuwana, Udaipur. We pride ourselves on creating an motivating environment where every member from complete beginners to seasoned athletes can achieve their fitness goals. Join our growing community and experience the difference that professional guidance, quality equipment, and genuine support can make in your fitness journey.",
   facilities: [
@@ -73,7 +73,7 @@ export const gymContent: GymContent = {
   links: [
     {
       label: "Directions",
-      url: "https://maps.app.goo.gl/UJVY88dTRWYaC1o16",
+      url: "https://maps.app.goo.gl/AKarnLRNJqscK3cZ8",
     }
   ]
 };
