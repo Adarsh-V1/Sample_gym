@@ -28,8 +28,8 @@ function formatPlus91(raw: string) {
 export const About = ({ data }: AboutProps) => {
   // Prefer explicit Directions link from data.links, fallback to googleMapEmbedUrl or generated search URL
   const directions =
-    (data.links ?? []).find(l => l.label.toLowerCase() === "directions")?.url ||
-    data.googleMapEmbedUrl ||
+    (data.links ?? []).find(l => l.label.toLowerCase() === "directions")?.url ??
+    data.googleMapEmbedUrl ??
     (data.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.address)}` : undefined);
 
   // phones (keep both numbers if available)
