@@ -40,8 +40,8 @@ export const gymContent: GymContent = {
   address:
     "Chitra complex, In front of Kingdom of chess, above Natural beauty parlour, cross roads school road, New Navratan, Bhuwana, Udaipur, Rajasthan 313004",
   phone: "083023 72719",
-  // keep both numbers (original + the new one requested)
-  phones: ["083023 72719", "+91 80004 98021"],
+  // Update phones array with both numbers
+  phones: ["+91 99286 07314", "+91 80004 98021"],
   logo: "/assets/change/5.jpg",
   openingHours: "Opens 6:00 am · Closes 9:00 pm · Closed on Sunday",
   googleMapEmbedUrl:
