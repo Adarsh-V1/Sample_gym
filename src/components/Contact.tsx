@@ -5,9 +5,41 @@ interface ContactProps {
   data: GymContent;
 }
 
+function normalizeNumber(raw: string) {
+  const digits = raw.replace(/\D/g, "");
+  if (digits.startsWith("91")) return digits;
+  if (digits.startsWith("0")) {
+    const trimmed = digits.replace(/^0+/, "");
+    return trimmed.length === 10 ? "91" + trimmed : trimmed;
+  }
+  return digits.length === 10 ? "91" + digits : digits;
+}
+
+function formatPlus91(raw: string) {
+  const normalized = normalizeNumber(raw);
+  const rest = normalized.startsWith("91") ? normalized.slice(2) : normalized;
+  const formattedRest =
+    rest.length === 10 ? rest.replace(/^(\d{5})(\d{5})$/, "$1 $2") : rest;
+  return `+91 ${formattedRest}`;
+}
+
 export const Contact = ({ data }: ContactProps) => {
+  const phones =
+    data.phones && data.phones.length > 0
+      ? data.phones
+      : data.phone
+      ? [data.phone]
+      : [];
+
   return (
-    <section id="contact" className="page-container">
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45 }}
+      className="page-container py-16 md:py-24"
+    >
       <motion.h3
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,18 +58,42 @@ export const Contact = ({ data }: ContactProps) => {
           <p className="text-sm md:text-base">
             <span className="font-semibold">Address:</span> {data.address}
           </p>
-          <p className="text-sm md:text-base">
-            <span className="font-semibold">Phone:</span> {data.phone}
-          </p>
+
+          <div className="flex flex-col gap-3">
+            {phones.map((p, i) => {
+              const normalized = normalizeNumber(p);
+              const tel = `tel:+${normalized}`;
+              const wa = `https://wa.me/${normalized}`;
+              const display = formatPlus91(p);
+              return (
+                <div key={p + i} className="flex items-center gap-3">
+                  <div className="text-sm">
+                    <div className="font-semibold">{display}</div>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <a
+                      href={tel}
+                      className="inline-block px-4 py-2 rounded bg-gray-700 text-white text-sm font-medium hover:bg-gray-600 transition-colors"
+                    >
+                      Call
+                    </a>
+                    <a
+                      href={wa}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-4 py-2 rounded bg-gray-700 text-white text-sm font-medium hover:bg-gray-600 transition-colors"
+                    >
+                      WhatsApp
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
           <p className="text-sm md:text-base">
             <span className="font-semibold">Opening Hours:</span> {data.openingHours}
           </p>
-          <a
-            href={`tel:${data.phone.replace(/\s+/g, "")}`}
-            className="inline-block mt-2 px-4 py-2 rounded bg-orange-500 text-black text-sm font-medium w-fit hover:bg-orange-600 transition-colors"
-          >
-            Call Now
-          </a>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 30 }}
@@ -54,6 +110,6 @@ export const Contact = ({ data }: ContactProps) => {
           />
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };

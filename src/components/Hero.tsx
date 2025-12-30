@@ -15,8 +15,6 @@ const variants = {
 };
 
 export const Hero = ({ data }: HeroProps) => {
-  const heroBg = ["/assets/change/1.jpg","/assets/change/2.jpg","/assets/change/3.jpg","/assets/change/4.jpg"][0];
-
   const highlightBadges = [
     "Brand‑New Facility",
     "Top Equipment",
@@ -31,13 +29,21 @@ export const Hero = ({ data }: HeroProps) => {
     { t: "Clean Routine", d: "Sanitized spaces and organized layout." },
     { t: "Solid Service", d: "Supportive staff and quick assistance." },
     { t: "Online/Outdoor", d: "Flexible service options when needed." },
-    { t: "Easy Payments", d: "Google Pay accepted for hassle‑free checkout." },
+    { t: "Community Vibe", d: "Friendly members fostering motivation." },
   ];
 
   return (
-    <header id="hero" className="relative flex items-center justify-center min-h-[70vh] pt-10">
+    <header id="hero" className="relative flex items-center justify-center min-h-[60vh] md:min-h-[70vh] pt-6 md:pt-10">
       <div className="page-container flex flex-col items-center text-center gap-4">
-        <motion.h1 custom={0} initial="hidden" animate="show" variants={variants} className="text-4xl md:text-6xl font-extrabold tracking-tight">
+        <motion.h1
+          custom={0}
+          initial="hidden"
+          animate="show"
+          variants={variants}
+          whileHover={{ scale: 1.02, rotate: -0.5 }}
+          transition={{ duration: 0.35 }}
+          className="text-4xl md:text-6xl font-extrabold tracking-tight"
+        >
           {data.name}
         </motion.h1>
         <motion.h2 custom={1} initial="hidden" animate="show" variants={variants} className="text-xl md:text-2xl text-orange-400 font-semibold">
@@ -56,7 +62,7 @@ export const Hero = ({ data }: HeroProps) => {
           {data.about.slice(0, 220)}...
         </motion.p>
         <motion.div custom={3} initial="hidden" animate="show" variants={variants} className="flex gap-4 mt-4">
-          <a href="#pricing" className="px-5 py-3 rounded-md bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium transition-colors">
+          <a href="#contact" className="px-5 py-3 rounded-md bg-orange-500 hover:bg-orange-600 text-black text-sm font-medium transition-colors">
             View Plans
           </a>
           <a href="#contact" className="px-5 py-3 rounded-md border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-black text-sm font-medium transition-colors">
@@ -83,8 +89,6 @@ export const Hero = ({ data }: HeroProps) => {
           ))}
         </motion.div>
       </div>
-      <div className="absolute inset-0 -z-10 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('${heroBg}')` }} />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
     </header>
   );
 };

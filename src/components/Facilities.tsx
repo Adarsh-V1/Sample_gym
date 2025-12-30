@@ -7,11 +7,14 @@ interface FacilitiesProps {
 
 export const Facilities = ({ data }: FacilitiesProps) => {
   return (
-    <section id="facilities" className="relative page-container">
-      <div
-        className="absolute inset-0 -z-10 bg-cover bg-center opacity-20"
-        style={{ backgroundImage: "url('/assets/change/3.jpg')" }}
-      />
+    <motion.section
+      id="facilities"
+      initial={{ opacity: 0, y: 8 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.45 }}
+      className="relative page-container py-16 md:py-24"
+    >
       <motion.h3
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,6 +45,6 @@ export const Facilities = ({ data }: FacilitiesProps) => {
           </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };

@@ -20,7 +20,9 @@ export interface GymContent {
   name: string;
   tagline: string;
   address: string;
-  phone: string;
+  phone: string; // keep original single-phone for compatibility
+  phones?: string[]; // new: multiple contact numbers
+  logo?: string; // new: path to logo image
   openingHours: string;
   googleMapEmbedUrl: string;
   about: string;
@@ -33,27 +35,25 @@ export interface GymContent {
 }
 
 export const gymContent: GymContent = {
-  name: "Evolution Gym and Fitness",
-  tagline: "Evolution Gym and Fitness - 4.9 (97 Reviews)",
-  address: "2nd floor, Sagarnidhi complex, Hosabettu, Kulai, Mangaluru, Karnataka 575019",
-  phone: "077600 24061",
-  openingHours: "Open · Closes 9 pm",
+  name: "Scult Fit",
+  tagline: "Scult Fit",
+  address:
+    "Chitra complex, In front of Kingdom of chess, above Natural beauty parlour, cross roads school road, New Navratan, Bhuwana, Udaipur, Rajasthan 313004",
+  phone: "083023 72719",
+  // keep both numbers (original + the new one requested)
+  phones: ["083023 72719", "+91 80004 98021"],
+  logo: "/assets/change/5.jpg",
+  openingHours: "Opens 6:00 am · Closes 9:00 pm · Closed on Sunday",
   googleMapEmbedUrl:
-    "https://www.google.com/maps?q=2nd+floor+Sagarnidhi+complex+Hosabettu+Kulai+Mangaluru+Karnataka+575019&output=embed",
+    "https://www.google.com/maps/place/24%C2%B037'05.0%22N+73%C2%B041'48.0%22E/@24.6180515,73.6940804,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.6180515!4d73.6966553?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
   about:
-    "Evolution Gym and Fitness offers top-notch, well-maintained equipment and a motivating atmosphere. Trainers are friendly, knowledgeable, and ready to guide you with proper form. The gym provides a wide variety of cardio and strength equipment and supports members seeking serious fitness improvements.",
+    "Scult Fit is a modern fitness studio in Chitra Complex, Bhuwana. Open 6:00 AM — 9:00 PM; closed on Sundays. Certified trainers, clean equipment, and flexible memberships. Highly rated for friendly, attentive trainers and a welcoming atmosphere. Great for beginners and experienced athletes alike, offering excellent value and a supportive community.",
   facilities: [
-    { title: "LGBTQ+ friendly", description: "Welcoming and inclusive environment." },
-    { title: "Identifies as women-owned", description: "Women-owned business." },
-    { title: "Online classes", description: "Remote workout options available." },
-    { title: "Outdoor services", description: "Outdoor training sessions offered." },
     { title: "On-site services", description: "In-person classes and personal training." },
-    { title: "Gender-neutral toilets", description: "Accessible restrooms for all members." },
-    { title: "Restroom", description: "Well-maintained restrooms available." },
-    { title: "Wi-Fi", description: "Free Wi‑Fi for members." },
-    { title: "Paid Wi-Fi", description: "Higher-speed paid option available." },
-    { title: "Swimming pool", description: "On-site swimming pool available." },
-    { title: "Payments", description: "Google Pay and common digital payments accepted." }
+    { title: "Restroom", description: "Clean, well-maintained restrooms." },
+    { title: "LGBTQ+ friendly", description: "Welcoming and inclusive environment." },
+    { title: "Membership required", description: "Membership required to access the facility." },
+    { title: "Parking", description: "Free street parking available." }
   ],
   pricing: [
     { plan: "Monthly", amount: "INR 1,500" },
@@ -61,31 +61,21 @@ export const gymContent: GymContent = {
     { plan: "Yearly", amount: "INR 15,000" }
   ],
   trainers: [
-    { name: "Head Trainer", speciality: "Strength & Conditioning · Form coaching", image: "" },
+    { name: "Head Coach", speciality: "Strength & Conditioning · Personal Training", image: "" },
     { name: "Senior Coach", speciality: "Cardio & Functional Training", image: "" }
   ],
   gallery: [
     "/assets/change/1.jpg",
     "/assets/change/2.jpg",
     "/assets/change/3.jpg",
-    "/assets/change/4.jpg"
+    "/assets/change/4.jpg",
+    "/assets/change/5.jpg" // logo also available in gallery
   ],
-  reviews: [
-    {
-      author: "thripti jayaram",
-      rating: 5,
-      text:
-        "I've been going to this gym for few months, and I absolutely love it. The equipment is top-notch and always clean. The trainer is super friendly and helpful, always around to give tips or correct your form. Highly recommend this place if you're serious about fitness."
-    },
-    {
-      author: "Sony",
-      rating: 5,
-      text:
-        "Overall, it’s a great place to work out. The equipment is well-maintained, the space is clean, and the variety of machines and free weights covers all fitness needs. Good range of cardio and strength equipment. Trainers are friendly and knowledgeable, always ready to guide you with proper form."
-    }
-  ],
+  reviews: [],
   links: [
-    { label: "Directions", url: "https://www.google.com/maps?q=2nd+floor+Sagarnidhi+complex+Hosabettu+Kulai+Mangaluru+Karnataka+575019" },
-    { label: "Call", url: "tel:+917760024061" }
-  ],
+    {
+      label: "Directions",
+      url: "https://www.google.com/maps/place/24%C2%B037'05.0%22N+73%C2%B041'48.0%22E/@24.6180515,73.6940804,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.6180515!4d73.6966553?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    }
+  ]
 };
