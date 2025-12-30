@@ -1,5 +1,4 @@
 import { type GymContent } from "@/data/gym/content";
-import { motion } from "framer-motion";
 
 interface ReviewsProps {
   data: GymContent;

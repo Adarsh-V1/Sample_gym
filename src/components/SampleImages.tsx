@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import Image from "next/image";
 
 const DEFAULT_IMAGES = [
   "/assets/default/girl1.jpg",
@@ -27,12 +28,12 @@ export const SampleImages = () => {
             key={src}
             className="relative h-44 md:h-52 rounded-xl overflow-hidden group bg-gray-800"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={src}
               alt="sample"
+              fill
               loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors" />
           </figure>

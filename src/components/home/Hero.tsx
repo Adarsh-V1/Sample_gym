@@ -32,7 +32,7 @@ export const Hero = () => {
 
 					{/* Contact numbers (display only) */}
 					<div className="mt-4 flex flex-wrap gap-3 justify-center md:justify-start">
-						{(gymContent.phones ?? [gymContent.phone]).map((p, idx) => {
+						{(gymContent.phones ?? [gymContent.phone]).map((p, _idx) => {
 							const digits = p.replace(/\D/g, "");
 							const normalized = digits.startsWith("91") ? digits : digits.replace(/^0+/, "") || digits;
 							const display = `+91 ${normalized.startsWith("91") ? normalized.slice(2) : normalized}`.replace(/^(\+91) (\d{5})(\d{5})$/, "$1 $2 $3");
