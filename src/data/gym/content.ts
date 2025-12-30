@@ -45,7 +45,7 @@ export const gymContent: GymContent = {
   logo: "/assets/change/5.jpg",
   openingHours: "Opens 6:00 am · Closes 9:00 pm · Closed on Sunday",
   googleMapEmbedUrl:
-    "https://www.google.com/maps/place/24%C2%B037'05.0%22N+73%C2%B041'48.0%22E/@24.6180515,73.6940804,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.6180515!4d73.6966553?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3629.121630615369!2d73.7076984!3d24.5504586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967eff6a57b7ffd%3A0x92482540324ce73b!2sScult%20Fit!5e0!3m2!1sen!2sin!4v1767095266189!5m2!1sen!2sin",
   about:
     "Scult Fit is a modern fitness studio in Chitra Complex, Bhuwana. Open 6:00 AM — 9:00 PM; closed on Sundays. Certified trainers, clean equipment, and flexible memberships. Highly rated for friendly, attentive trainers and a welcoming atmosphere. Great for beginners and experienced athletes alike, offering excellent value and a supportive community.",
   facilities: [
@@ -75,7 +75,7 @@ export const gymContent: GymContent = {
   links: [
     {
       label: "Directions",
-      url: "https://www.google.com/maps/place/24%C2%B037'05.0%22N+73%C2%B041'48.0%22E/@24.6180515,73.6940804,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.6180515!4d73.6966553?hl=en&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+      url: "https://maps.app.goo.gl/UJVY88dTRWYaC1o16",
     }
   ]
 };
