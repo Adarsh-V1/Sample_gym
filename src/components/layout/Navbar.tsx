@@ -96,7 +96,7 @@ export const Navbar = ({ name }: NavbarProps) => {
   return (
     // smaller mobile height (h-16), desktop unchanged
     <nav className="relative h-16 md:h-24 flex flex-col sticky top-0 bg-black/70 backdrop-blur border-b border-gray-800 shadow-sm z-[9999]">
-      <article className="page-container flex items-center
+      <article className="page-container flex items-center justify-between h-full">
         <motion.span
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
