@@ -88,12 +88,7 @@ export const About = ({ data }: AboutProps) => {
 
       {/* Contact numbers (plain display with Copy action) */}
       {phones.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-6 flex flex-col gap-3 items-center md:items-start"
-        >
+        <div className="mt-6 flex flex-col gap-3 items-center md:items-start">
           {phones.map((p, i) => {
             const display = formatPlus91(p);
             return (
@@ -112,17 +107,12 @@ export const About = ({ data }: AboutProps) => {
               </div>
             );
           })}
-        </motion.div>
+        </div>
       )}
 
       {/* Directions only (single link) */}
       {directions && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-6 flex flex-wrap justify-center md:justify-start gap-3"
-        >
+        <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-3">
           <a
             href={directions}
             target="_blank"
@@ -131,7 +121,7 @@ export const About = ({ data }: AboutProps) => {
           >
             Directions
           </a>
-        </motion.div>
+        </div>
       )}
     </motion.section>
   );

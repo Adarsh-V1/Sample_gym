@@ -5,7 +5,6 @@ import { Hero } from "@/components/home/Hero";
 import { About } from "@/components/About";
 import { Gallery } from "@/components/Gallery";
 import { Facilities } from "@/components/Facilities";
-import { Pricing } from "@/components/Pricing";
 import { Reviews } from "@/components/Reviews";
 import { Contact } from "@/components/Contact";
 
@@ -29,7 +28,6 @@ const GymHome = () => {
         <About data={gymContent} />
         <Gallery />
         <Facilities data={gymContent} />
-        <Pricing data={gymContent} />
         <Reviews data={gymContent} />
         <Contact data={gymContent} />
       </main>

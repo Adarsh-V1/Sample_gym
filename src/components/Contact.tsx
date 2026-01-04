@@ -35,10 +35,10 @@ export const Contact = ({ data }: ContactProps) => {
   return (
     <motion.section
       id="contact"
-      initial={{ opacity: 0, y: 8 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.45 }}
+      transition={{ duration: 0.3 }}
       className="relative page-container py-16 md:py-24"
     >
       {/* Background image with overlay */}
@@ -51,21 +51,11 @@ export const Contact = ({ data }: ContactProps) => {
         />
       </div>
 
-      <motion.h3
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
-      >
+      <h3 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
         Contact & Location
-      </motion.h3>
+      </h3>
       <div className="grid md:grid-cols-2 gap-8">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col gap-4 items-center md:items-start text-center md:text-left"
-        >
+        <div className="flex flex-col gap-4 items-center md:items-start text-center md:text-left">
           <p className="text-sm md:text-base">
             <span className="font-semibold">Address:</span> {data.address}
           </p>
@@ -105,13 +95,8 @@ export const Contact = ({ data }: ContactProps) => {
           <p className="text-sm md:text-base">
             <span className="font-semibold">Opening Hours:</span> {data.openingHours}
           </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          className="rounded-lg overflow-hidden border border-gray-700 h-64 md:h-80"
-        >
+        </div>
+        <div className="rounded-lg overflow-hidden border border-gray-700 h-64 md:h-80">
           <iframe
             title="Gym Location"
             src={data.googleMapEmbedUrl || "about:blank"}
@@ -119,7 +104,7 @@ export const Contact = ({ data }: ContactProps) => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );

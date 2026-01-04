@@ -94,19 +94,19 @@ export const Navbar = ({ name }: NavbarProps) => {
   };
 
   return (
-    // smaller mobile height (h-16), desktop unchanged
-    <nav className="relative h-16 md:h-24 flex flex-col sticky top-0 bg-black/70 backdrop-blur border-b border-gray-800 shadow-sm z-[9999]">
+    // smaller height: h-14 mobile, h-18 desktop
+    <nav className="h-14 md:h-18 flex flex-col sticky top-0 bg-black/70 backdrop-blur border-b border-gray-800 shadow-sm z-[9999]">
       <article className="page-container flex items-center justify-between h-full">
         <motion.span
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="font-bold text-white uppercase tracking-wide text-sm md:text-base"
+          className="font-bold text-white uppercase tracking-wide text-xs md:text-sm"
         >
           {name ?? gymContent.name}
         </motion.span>
 
-        {/* Desktop menu: increased gap and active underline */}
-        <ul className="hidden md:flex gap-8 text-xs md:text-sm text-white">
+        {/* Desktop menu: reduced gap and smaller text */}
+        <ul className="hidden md:flex gap-6 text-xs text-white">
           {items.map(id => (
             <li key={id}>
               <Link
@@ -124,17 +124,17 @@ export const Navbar = ({ name }: NavbarProps) => {
           ))}
         </ul>
 
-        {/* Mobile toggle - animated burger */}
+        {/* Mobile toggle - smaller button */}
         <button
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
           onClick={() => setOpen(prev => !prev)}
-          className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded border border-white/20 text-white relative z-[9999]"
+          className="md:hidden inline-flex items-center justify-center w-8 h-8 rounded border border-white/20 text-white relative z-[9999]"
         >
           <span className="sr-only">Open menu</span>
-          <svg width="22" height="22" viewBox="0 0 22 22" className="block">
+          <svg width="20" height="20" viewBox="0 0 22 22" className="block">
             <motion.path
               strokeWidth="2"
               stroke="white"
@@ -161,7 +161,7 @@ export const Navbar = ({ name }: NavbarProps) => {
         </button>
       </article>
 
-      {/* Mobile dropdown (fixed overlay under taller nav) */}
+      {/* Mobile dropdown - adjusted top position */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -172,7 +172,7 @@ export const Navbar = ({ name }: NavbarProps) => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.22 }}
-            className="fixed left-0 right-0 top-16 md:top-24 md:hidden overflow-hidden bg-black/95 z-[10001] max-h-[calc(100vh-4rem)]"
+            className="fixed left-0 right-0 top-14 md:top-18 md:hidden overflow-hidden bg-black/95 z-[10001] max-h-[calc(100vh-3.5rem)]"
           >
             <div
               id="mobile-navigation"
