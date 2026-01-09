@@ -96,7 +96,7 @@ export const gymContent: GymContent = {
   links: [
     {
       label: "Directions",
-      url: "https://maps.app.goo.gl/YourDirectionsLink",
+      url: "https://maps.app.goo.gl/FeKZGQqj6yASCTpKA",
     }
   ]
 };
